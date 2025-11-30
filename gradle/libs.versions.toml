@@ -1,6 +1,6 @@
 [versions]
-junit-jupiter = "6.0.0"
-kotlin = "2.2.20"
+junit-jupiter = "6.0.1"
+kotlin = "2.2.21"
 kotlinx-coroutines = "1.10.2"
 ktfmt = "0.25.0"
 
