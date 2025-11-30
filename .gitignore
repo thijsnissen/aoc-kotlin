@@ -1,0 +1,12 @@
+*.env
+.DS_Store
+.gradle
+.idea
+.kotlin
+.vscode
+.vscode/
+bin/
+build
+out/
+target
+*.input

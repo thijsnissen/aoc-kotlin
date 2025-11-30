@@ -1,0 +1,50 @@
+plugins {
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.ktfmt)
+}
+
+group = "nl.thijsnissen"
+
+version = "0.1.0-SNAPSHOT"
+
+description = "My solutions to the Advent of Code puzzles in Kotlin"
+
+dependencies {
+    implementation(libs.dotenv.kotlin)
+    implementation(libs.kotlinx.coroutines)
+    testImplementation(libs.kotlinx.coroutines.test)
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+kotlin {
+    jvmToolchain(24)
+
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            "-Xjsr305=strict",
+            "-Werror",
+            "-Wextra",
+            "-verbose",
+            "-Xcontext-parameters",
+            "-Xcontext-sensitive-resolution",
+        )
+    }
+}
+
+testing {
+    suites {
+        val test by getting(JvmTestSuite::class) { useJUnitJupiter() }
+
+        withType<JvmTestSuite> {
+            targets.all {
+                testTask.configure { testLogging { events("passed", "skipped", "failed") } }
+            }
+        }
+    }
+}
+
+ktfmt { kotlinLangStyle() }
