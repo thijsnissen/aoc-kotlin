@@ -10,4 +10,6 @@ object Day01 : AdventOfCode<Int, Int>() {
     override fun part2(): Int = day01.length
 }
 
-fun main() = Day01.solve()
+fun main() {
+    Day01.solve()
+}
