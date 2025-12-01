@@ -1,13 +1,47 @@
 package nl.thijsnissen.adventofcode.aoc2025
 
+import kotlin.math.abs
 import nl.thijsnissen.adventofcode.AdventOfCode
 
-object Day01 : AdventOfCode<Int, Int>() {
-    val day01 = input("input")
+object Day01 : AdventOfCode<Int, Int>("input") {
+    val instructions: List<Int> = input().lines().map(::parse)
 
-    override fun part1(): Int = day01.length
+    fun parse(s: String): Int {
+        val direction = s.take(1)
+        val clicks = s.drop(1).toInt()
 
-    override fun part2(): Int = day01.length
+        return if (direction == "L") clicks * -1 else clicks
+    }
+
+    data class Dial(val zeros: Int = 0, val pointer: Int = 50) {
+        fun countZerosAfterRotation(instruction: Int): Dial {
+            val nextPointer = nextPointer(instruction)
+
+            return Dial(zeros + if (nextPointer == 0) 1 else 0, nextPointer)
+        }
+
+        fun countZerosDuringRotation(instruction: Int): Dial {
+            val fullRounds = abs(instruction / SIZE)
+            val remainder =
+                when {
+                    pointer + instruction % SIZE > SIZE - 1 -> 1
+                    pointer + instruction % SIZE <= 0 && pointer != 0 -> 1
+                    else -> 0
+                }
+
+            return Dial(zeros + fullRounds + remainder, nextPointer(instruction))
+        }
+
+        private fun nextPointer(instruction: Int): Int = (pointer + instruction).mod(SIZE)
+
+        companion object {
+            const val SIZE = 100
+        }
+    }
+
+    override fun part1(): Int = instructions.fold(Dial(), Dial::countZerosAfterRotation).zeros
+
+    override fun part2(): Int = instructions.fold(Dial(), Dial::countZerosDuringRotation).zeros
 }
 
 fun main() {
