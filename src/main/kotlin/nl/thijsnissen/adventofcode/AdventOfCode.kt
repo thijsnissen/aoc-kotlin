@@ -2,7 +2,7 @@ package nl.thijsnissen.adventofcode
 
 import kotlin.time.measureTimedValue
 
-abstract class AdventOfCode<A, B> {
+abstract class AdventOfCode<A, B>(private val ext: String) {
     abstract fun part1(): A
 
     abstract fun part2(): B?
@@ -18,9 +18,12 @@ abstract class AdventOfCode<A, B> {
 
     private val day: String = this::class.simpleName?.filter { c -> c.isDigit() }.orEmpty()
 
-    fun input(ext: String): String =
-        ClassLoader.getSystemResourceAsStream("$year/day$day.${System.getenv("EXT") ?: ext}")
-            ?.use { s -> s.bufferedReader().readText().trim() } ?: error("Resource not found!")
+    fun getExt(): String = System.getenv("EXT") ?: ext
+
+    fun input(): String =
+        ClassLoader.getSystemResourceAsStream("$year/day$day.${getExt()}")?.use { s ->
+            s.bufferedReader().readText().trim()
+        } ?: error("Resource not found!")
 
     fun solve() {
         val (a1, d1) = measureTimedValue { part1() }
