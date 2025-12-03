@@ -24,7 +24,7 @@ object Day01 : AdventOfCode<Int, Int>("input") {
             val fullRounds = abs(instruction / SIZE)
             val remainder =
                 when {
-                    pointer + instruction % SIZE > SIZE - 1 -> 1
+                    pointer + instruction % SIZE >= SIZE -> 1
                     pointer + instruction % SIZE <= 0 && pointer != 0 -> 1
                     else -> 0
                 }
