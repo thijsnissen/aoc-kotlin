@@ -46,13 +46,26 @@ object Aoc2025Test {
     @Test
     fun testDay04() {
         if (Day04.getExt() == "test") {
-            Assertions.assertEquals(0, Day04.part1())
-            Assertions.assertEquals(0, Day04.part2())
+            Assertions.assertEquals(13, Day04.part1())
+            Assertions.assertEquals(43, Day04.part2())
         }
 
         if (Day04.getExt() == "input") {
-            Assertions.assertEquals(0, Day04.part1())
-            Assertions.assertEquals(0, Day04.part2())
+            Assertions.assertEquals(1569, Day04.part1())
+            Assertions.assertEquals(9280, Day04.part2())
+        }
+    }
+
+    @Test
+    fun testDay05() {
+        if (Day05.getExt() == "test") {
+            Assertions.assertEquals(0, Day05.part1())
+            Assertions.assertEquals(0, Day05.part2())
+        }
+
+        if (Day05.getExt() == "input") {
+            Assertions.assertEquals(0, Day05.part1())
+            Assertions.assertEquals(0, Day05.part2())
         }
     }
 }
