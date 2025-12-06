@@ -3,9 +3,9 @@ package nl.thijsnissen.adventofcode.aoc2025
 import nl.thijsnissen.adventofcode.AdventOfCode
 
 object Day02 : AdventOfCode<Long, Long>("input") {
-    val idRanges: List<LongRange> = input().split(",").map(::parse)
+    val idRanges: List<LongRange> = input().split(",").map(::toRange)
 
-    fun parse(s: String): LongRange {
+    fun toRange(s: String): LongRange {
         val start = s.takeWhile { it != '-' }
         val end = s.drop(start.length + 1)
 
