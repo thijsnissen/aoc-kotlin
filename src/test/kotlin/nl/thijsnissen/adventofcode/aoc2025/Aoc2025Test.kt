@@ -68,4 +68,17 @@ object Aoc2025Test {
             Assertions.assertEquals(344423158480189, Day05.part2())
         }
     }
+
+    @Test
+    fun testDay06() {
+        if (Day06.getExt() == "test") {
+            Assertions.assertEquals(0, Day06.part1())
+            Assertions.assertEquals(0, Day06.part2())
+        }
+
+        if (Day06.getExt() == "input") {
+            Assertions.assertEquals(0, Day06.part1())
+            Assertions.assertEquals(0, Day06.part2())
+        }
+    }
 }
