@@ -13,16 +13,16 @@ abstract class AdventOfCode<A, B>(private val ext: String) {
             ?.split(".")
             ?.dropLast(1)
             ?.last()
-            ?.filter { c -> c.isDigit() }
+            ?.filter { it.isDigit() }
             .orEmpty()
 
-    private val day: String = this::class.simpleName?.filter { c -> c.isDigit() }.orEmpty()
+    private val day: String = this::class.simpleName?.filter { it.isDigit() }.orEmpty()
 
     fun getExt(): String = System.getenv("EXT") ?: ext
 
     fun input(): String =
-        ClassLoader.getSystemResourceAsStream("$year/day$day.${getExt()}")?.use { s ->
-            s.bufferedReader().readText().trim()
+        ClassLoader.getSystemResourceAsStream("$year/day$day.${getExt()}")?.use {
+            it.bufferedReader().readText().trim()
         } ?: error("Resource not found!")
 
     fun solve() {
