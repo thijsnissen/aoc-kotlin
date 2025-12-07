@@ -27,7 +27,7 @@ object Day06 : AdventOfCode<Long, Long>("input") {
             fun forNormalMath(ss: List<String>): List<Problem> =
                 ss.map { """\S+""".toRegex().findAll(it).toList() }
                     .transpose()
-                    .map { fromMatchResults(it) }
+                    .map(Problem::fromMatchResults)
 
             fun forCephalopodMath(ss: List<String>): List<Problem> {
                 val numbers =
@@ -42,7 +42,7 @@ object Day06 : AdventOfCode<Long, Long>("input") {
                                         acc.last().plusElement(n.joinToString("").trim().toLong())
                                     )
                         }
-                val operations = ss.last().filterNot { it == ' ' }.toList()
+                val operations = ss.last().filterNot { it.isWhitespace() }.toList()
 
                 return numbers.zip(operations).map(Problem::fromPair)
             }
