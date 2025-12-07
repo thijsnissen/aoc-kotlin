@@ -72,13 +72,13 @@ object Aoc2025Test {
     @Test
     fun testDay06() {
         if (Day06.getExt() == "test") {
-            Assertions.assertEquals(0, Day06.part1())
-            Assertions.assertEquals(0, Day06.part2())
+            Assertions.assertEquals(4277556, Day06.part1())
+            Assertions.assertEquals(3263827, Day06.part2())
         }
 
         if (Day06.getExt() == "input") {
-            Assertions.assertEquals(0, Day06.part1())
-            Assertions.assertEquals(0, Day06.part2())
+            Assertions.assertEquals(6417439773370, Day06.part1())
+            Assertions.assertEquals(11044319475191, Day06.part2())
         }
     }
 }
