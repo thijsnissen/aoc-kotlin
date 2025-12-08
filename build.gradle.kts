@@ -41,7 +41,11 @@ testing {
 
         withType<JvmTestSuite> {
             targets.all {
-                testTask.configure { testLogging { events("passed", "skipped", "failed") } }
+                testTask.configure {
+                    testLogging { events("passed", "skipped", "failed") }
+                    maxHeapSize = "4G"
+                    jvmArgs = listOf("-XX:+HeapDumpOnOutOfMemoryError", "-XX:+UseG1GC")
+                }
             }
         }
     }
