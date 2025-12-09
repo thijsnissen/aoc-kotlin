@@ -116,7 +116,7 @@ object Aoc2025Test {
         }
 
         if (Day09.getExt() == "input") {
-            Assertions.assertEquals(0, Day09.part1())
+            Assertions.assertEquals(4715966250, Day09.part1())
             Assertions.assertEquals(0, Day09.part2())
         }
     }
