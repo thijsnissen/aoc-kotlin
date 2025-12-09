@@ -111,8 +111,8 @@ object Aoc2025Test {
     @Test
     fun testDay09() {
         if (Day09.getExt() == "test") {
-            Assertions.assertEquals(0, Day09.part1())
-            Assertions.assertEquals(0, Day09.part2())
+            Assertions.assertEquals(50, Day09.part1())
+            Assertions.assertEquals(24, Day09.part2())
         }
 
         if (Day09.getExt() == "input") {
