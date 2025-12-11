@@ -133,4 +133,30 @@ object Aoc2025Test {
             Assertions.assertEquals(0, Day10.part2())
         }
     }
+
+    @Test
+    fun testDay11() {
+        if (Day11.getExt() == "test") {
+            Assertions.assertEquals(8, Day11.part1())
+            Assertions.assertEquals(2, Day11.part2())
+        }
+
+        if (Day11.getExt() == "input") {
+            Assertions.assertEquals(658, Day11.part1())
+            Assertions.assertEquals(371113003846800, Day11.part2())
+        }
+    }
+
+    @Test
+    fun testDay12() {
+        if (Day12.getExt() == "test") {
+            Assertions.assertEquals(0, Day12.part1())
+            Assertions.assertEquals(0, Day12.part2())
+        }
+
+        if (Day12.getExt() == "input") {
+            Assertions.assertEquals(0, Day12.part1())
+            Assertions.assertEquals(0, Day12.part2())
+        }
+    }
 }
