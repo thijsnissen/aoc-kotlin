@@ -3,7 +3,6 @@ package nl.thijsnissen.adventofcode.aoc2025
 import kotlin.math.pow
 import kotlin.math.sqrt
 import nl.thijsnissen.adventofcode.AdventOfCode
-import nl.thijsnissen.adventofcode.aoc2025.Day08.State.Companion.connectAll
 
 object Day08 : AdventOfCode<Int, Int>("input") {
     val boxes: List<Box> = input().lines().map { Box.fromString(it) }
@@ -38,19 +37,22 @@ object Day08 : AdventOfCode<Int, Int>("input") {
         fun multiply(maxN: Int): Int =
             acc.map { it.size }.sorted().takeLast(maxN).reduce { acc, s -> acc * s }
 
+        fun connectAll(n: Int): Pair<Box, Box> {
+            tailrec fun loop(s: State): Pair<Box, Box> {
+                val ns = s.makeConnection()
+
+                return if (ns.acc.firstOrNull()?.size == n) s.ps.first() else loop(ns)
+            }
+
+            return loop(this)
+        }
+
         companion object {
             fun fromBoxes(bs: List<Box>): State =
                 State(
                     bs.flatMapIndexed { i, a -> boxes.drop(i + 1).map { b -> a to b } }
                         .sortedBy { it.first.euclidean(it.second) }
                 )
-
-            // This function is on the companion object to be able to make it tail recursive.
-            tailrec fun State.connectAll(n: Int): Pair<Box, Box> {
-                val ns = makeConnection()
-
-                return if (ns.acc.firstOrNull()?.size == n) ps.first() else ns.connectAll(n)
-            }
         }
     }
 
