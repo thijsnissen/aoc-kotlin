@@ -124,12 +124,12 @@ object Aoc2025Test {
     @Test
     fun `Day 10 - Factory`() {
         if (Day10.getExt() == "test") {
-            Assertions.assertEquals(0, Day10.part1())
+            Assertions.assertEquals(7, Day10.part1())
             Assertions.assertEquals(0, Day10.part2())
         }
 
         if (Day10.getExt() == "input") {
-            Assertions.assertEquals(0, Day10.part1())
+            Assertions.assertEquals(449, Day10.part1())
             Assertions.assertEquals(0, Day10.part2())
         }
     }
