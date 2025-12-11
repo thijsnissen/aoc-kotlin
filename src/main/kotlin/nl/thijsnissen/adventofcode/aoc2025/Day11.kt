@@ -26,9 +26,7 @@ object Day11 : AdventOfCode<Long, Long>("input") {
                 listOf("svr" to "fft", "fft" to "dac", "dac" to "out"),
                 listOf("svr" to "dac", "dac" to "fft", "fft" to "out"),
             )
-            .firstNotNullOf {
-                it.map { devices.paths(it.first, it.second) }.takeUnless { 0 in it }
-            }
+            .firstNotNullOf { it.map { devices.paths(it.first, it.second) }.takeUnless { 0 in it } }
             .reduce { acc, i -> acc * i }
 }
 
