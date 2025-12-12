@@ -8,6 +8,7 @@ object Day12 : AdventOfCode<Int, Int>("input") {
     val regions: List<Region> = parts.last().lines().map { Region.fromString(it) }
 
     data class Region(val size: Int, val presents: List<Int>) {
+        // slack is additional space to move around and mainly to make the testcase pass
         fun solve(ps: List<Int>, slack: Int = 5): Boolean =
             presents.foldIndexed(0) { i, acc, p -> acc + ps[i] * p } <= size - slack
 
