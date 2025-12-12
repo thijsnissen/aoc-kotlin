@@ -5,7 +5,7 @@ import kotlin.time.measureTimedValue
 abstract class AdventOfCode<A, B>(private val ext: String) {
     abstract fun part1(): A
 
-    abstract fun part2(): B?
+    open fun part2(): B? = null
 
     private val year: String =
         this::class
