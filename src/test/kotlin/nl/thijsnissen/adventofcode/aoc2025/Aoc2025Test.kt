@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 object Aoc2025Test {
     @Test
-    fun testDay01() {
+    fun `Day 1 - Secret Entrance`() {
         if (Day01.getExt() == "test") {
             Assertions.assertEquals(3, Day01.part1())
             Assertions.assertEquals(6, Day01.part2())
@@ -18,7 +18,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay02() {
+    fun `Day 2 - Gift Shop`() {
         if (Day02.getExt() == "test") {
             Assertions.assertEquals(1227775554, Day02.part1())
             Assertions.assertEquals(4174379265, Day02.part2())
@@ -31,7 +31,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay03() {
+    fun `Day 3 - Lobby`() {
         if (Day03.getExt() == "test") {
             Assertions.assertEquals(357, Day03.part1())
             Assertions.assertEquals(3121910778619, Day03.part2())
@@ -44,7 +44,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay04() {
+    fun `Day 4 - Printing Department`() {
         if (Day04.getExt() == "test") {
             Assertions.assertEquals(13, Day04.part1())
             Assertions.assertEquals(43, Day04.part2())
@@ -57,7 +57,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay05() {
+    fun `Day 5 - Cafeteria`() {
         if (Day05.getExt() == "test") {
             Assertions.assertEquals(3, Day05.part1())
             Assertions.assertEquals(14, Day05.part2())
@@ -70,7 +70,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay06() {
+    fun `Day 6 - Trash Compactor`() {
         if (Day06.getExt() == "test") {
             Assertions.assertEquals(4277556, Day06.part1())
             Assertions.assertEquals(3263827, Day06.part2())
@@ -83,7 +83,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay07() {
+    fun `Day 7 - Laboratories`() {
         if (Day07.getExt() == "test") {
             Assertions.assertEquals(21, Day07.part1())
             Assertions.assertEquals(40, Day07.part2())
@@ -96,7 +96,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay08() {
+    fun `Day 8 - Playground`() {
         if (Day08.getExt() == "test") {
             Assertions.assertEquals(40, Day08.part1())
             Assertions.assertEquals(25272, Day08.part2())
@@ -109,7 +109,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay09() {
+    fun `Day 9 - Movie Theater`() {
         if (Day09.getExt() == "test") {
             Assertions.assertEquals(50, Day09.part1())
             Assertions.assertEquals(24, Day09.part2())
@@ -122,7 +122,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay10() {
+    fun `Day 10 - Factory`() {
         if (Day10.getExt() == "test") {
             Assertions.assertEquals(0, Day10.part1())
             Assertions.assertEquals(0, Day10.part2())
@@ -135,7 +135,7 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay11() {
+    fun `Day 11 - Reactor`() {
         if (Day11.getExt() == "test") {
             Assertions.assertEquals(8, Day11.part1())
             Assertions.assertEquals(2, Day11.part2())
@@ -148,15 +148,13 @@ object Aoc2025Test {
     }
 
     @Test
-    fun testDay12() {
+    fun `Day 12 - Christmas Tree Farm`() {
         if (Day12.getExt() == "test") {
-            Assertions.assertEquals(0, Day12.part1())
-            Assertions.assertEquals(0, Day12.part2())
+            Assertions.assertEquals(2, Day12.part1())
         }
 
         if (Day12.getExt() == "input") {
-            Assertions.assertEquals(0, Day12.part1())
-            Assertions.assertEquals(0, Day12.part2())
+            Assertions.assertEquals(463, Day12.part1())
         }
     }
 }
