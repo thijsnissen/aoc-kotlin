@@ -9,11 +9,6 @@ version = "0.1.0-SNAPSHOT"
 
 description = "My solutions to the Advent of Code puzzles in Kotlin"
 
-dependencies {
-    implementation(libs.kotlinx.coroutines)
-    testImplementation(libs.kotlinx.coroutines.test)
-}
-
 repositories {
     mavenCentral()
     mavenLocal()
