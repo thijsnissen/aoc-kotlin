@@ -25,7 +25,6 @@ kotlin {
             "-verbose",
             "-Xcontext-parameters",
             "-Xcontext-sensitive-resolution",
-            "-Xnested-type-aliases",
         )
     }
 }
