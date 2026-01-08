@@ -1,5 +1,5 @@
 [versions]
-junit-jupiter = "6.0.1"
+junit-jupiter = "6.0.2"
 kotlin = "2.3.0"
 ktfmt = "0.25.0"
 
