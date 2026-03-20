@@ -24,8 +24,9 @@ object Day09 : AdventOfCode<Long, Long>("input") {
                     yMax = maxOf(t1.second, t2.second),
                 )
 
-            fun combinations(ts: List<Tile>): List<Box> =
-                ts.flatMapIndexed { i, t1 -> ts.drop(i + 1).map { t2 -> fromTiles(t1, t2) } }
+            fun combinations(ts: List<Tile>): List<Box> = ts.flatMapIndexed { i, t1 ->
+                ts.drop(i + 1).map { t2 -> fromTiles(t1, t2) }
+            }
 
             fun perimeter(ts: List<Tile>): List<Box> =
                 ts.zipWithNext().plusElement(ts.last() to ts.first()).map {
