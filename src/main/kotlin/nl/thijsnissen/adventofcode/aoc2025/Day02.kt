@@ -15,8 +15,9 @@ object Day02 : AdventOfCode<Long, Long>("input") {
     fun Long.isInvalidId(): Boolean =
         toString().let { it.take(it.length / 2) == it.drop(it.length / 2) }
 
-    fun Long.isInvalidId(groupSizes: IntProgression): Boolean =
-        groupSizes.any { toString().chunked(it).distinct().size == 1 }
+    fun Long.isInvalidId(groupSizes: IntProgression): Boolean = groupSizes.any {
+        toString().chunked(it).distinct().size == 1
+    }
 
     fun List<LongRange>.sumOfIds(predicate: (Long) -> Boolean): Long = sumOf {
         it.filter { predicate(it) }.sum()
@@ -24,8 +25,9 @@ object Day02 : AdventOfCode<Long, Long>("input") {
 
     override fun part1(): Long = idRanges.sumOfIds { it.isInvalidId() }
 
-    override fun part2(): Long =
-        idRanges.sumOfIds { it.isInvalidId(it.toString().length / 2 downTo 1) }
+    override fun part2(): Long = idRanges.sumOfIds {
+        it.isInvalidId(it.toString().length / 2 downTo 1)
+    }
 }
 
 fun main() {
