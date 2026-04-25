@@ -1,6 +1,6 @@
 [versions]
 junit-jupiter = "6.0.3"
-kotlin = "2.3.20"
+kotlin = "2.3.21"
 ktfmt = "0.26.0"
 
 [libraries]
