@@ -1,7 +1,7 @@
 [versions]
 junit-jupiter = "6.1.2"
 kotlin = "2.4.10"
-ktfmt = "0.26.0"
+ktfmt = "0.27.0"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
