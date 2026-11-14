@@ -51,7 +51,7 @@ object Day08 : AdventOfCode<Int, Int>("input") {
             fun fromBoxes(bs: List<Box>): State =
                 State(
                     bs.flatMapIndexed { i, a -> boxes.drop(i + 1).map { b -> a to b } }
-                        .sortedBy { it.first.euclidean(it.second) }
+                        .sortedBy { it.first.euclidean(it.second) },
                 )
         }
     }
