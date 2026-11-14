@@ -39,7 +39,7 @@ object Day06 : AdventOfCode<Long, Long>("input") {
                             else
                                 acc.dropLast(1)
                                     .plusElement(
-                                        acc.last().plusElement(n.joinToString("").trim().toLong())
+                                        acc.last().plusElement(n.joinToString("").trim().toLong()),
                                     )
                         }
                 val operations = ss.last().filterNot(Char::isWhitespace).toList()
